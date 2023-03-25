@@ -2,12 +2,21 @@ package Model;
 
 import Model.Association;
 
+/**
+ * The type Binary tree.
+ *
+ * @param <K> the type parameter
+ * @param <V> the type parameter
+ */
 public class BinaryTree<K extends Comparable<K>, V> {
     private Association<K, V> data;
     private BinaryTree<K, V> left;
     private BinaryTree<K, V> right;
     private boolean alreadyPrinted;
 
+    /**
+     * Instantiates a new Binary tree.
+     */
     public BinaryTree() {
         data = null;
         left = null;
@@ -15,6 +24,11 @@ public class BinaryTree<K extends Comparable<K>, V> {
         alreadyPrinted = false;
     }
 
+    /**
+     * Instantiates a new Binary tree.
+     *
+     * @param data the data
+     */
     public BinaryTree(Association<K, V> data) {
         this.data = data;
         left = null;
@@ -22,14 +36,29 @@ public class BinaryTree<K extends Comparable<K>, V> {
         alreadyPrinted = false;
     }
 
+    /**
+     * Sets data.
+     *
+     * @param data the data
+     */
     public void setData(Association<K, V> data) {
         this.data = data;
     }
 
+    /**
+     * Gets value.
+     *
+     * @return the value
+     */
     public Association<K, V> getValue() {
         return data;
     }
 
+    /**
+     * Insert.
+     *
+     * @param value the value
+     */
     public void insert(Association<K, V> value) {
         if (value.getKey() == null) {
             return;
@@ -52,6 +81,12 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
     }
 
+    /**
+     * Contains boolean.
+     *
+     * @param key the key
+     * @return the boolean
+     */
     public boolean contains(K key) {
         int res = key.compareTo(data.getKey());
 
@@ -72,6 +107,12 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
     }
 
+    /**
+     * Get v.
+     *
+     * @param key the key
+     * @return the v
+     */
     public V get(K key) {
         int res = key.compareTo(data.getKey());
 
@@ -86,6 +127,9 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
     }
 
+    /**
+     * Print in order.
+     */
     public void printInOrder() {
         if (left != null) {
             left.printInOrder();
@@ -121,6 +165,12 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
     }
 
+    /**
+     * Search binary tree.
+     *
+     * @param key the key
+     * @return the binary tree
+     */
     public BinaryTree<K, V> search(K key) {
         int res = key.compareTo(data.getKey());
 

@@ -5,7 +5,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The type Divided words.
+ */
 public class dividedWords {
+    /**
+     * Reading file array list.
+     *
+     * @param fileName the file name
+     * @return the array list
+     */
     public ArrayList<String[]> readingFile(String fileName) {
         ArrayList<String[]> wordList = new ArrayList<>();
 
@@ -29,6 +38,13 @@ public class dividedWords {
         return null;
     }
 
+    /**
+     * Gets phrase.
+     *
+     * @param path the path
+     * @return the phrase
+     * @throws IOException the io exception
+     */
     public ArrayList<String> getPhrase(String path) throws IOException{
         ArrayList<String> lines = new ArrayList<>();
 

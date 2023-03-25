@@ -10,7 +10,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * The type Driver program.
+ */
 public class DriverProgram {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws IOException the io exception
+     */
     public static void main(String[] args) throws IOException {
         BinaryTree<String,ArrayList<String>> EnglishDict = new BinaryTree<>();
         BinaryTree<String,ArrayList<String>> FrenchDict = new BinaryTree<>();
@@ -30,6 +39,13 @@ public class DriverProgram {
         }
     }
 
+    /**
+     * Set up by file.
+     *
+     * @param path the path
+     * @param ED   the ed
+     * @param FD   the fd
+     */
     public static void setUpByFile(String path, BinaryTree<String, ArrayList<String>> ED, BinaryTree<String, ArrayList<String>> FD){
             dividedWords FR = new dividedWords();
             ArrayList<String[]> values =FR.readingFile(path);
@@ -50,7 +66,16 @@ public class DriverProgram {
         }
         }
 
-        public static boolean optionSelector(String op, BinaryTree<String, ArrayList<String>> ED, BinaryTree<String, ArrayList<String>> FD) throws IOException {
+    /**
+     * Option selector boolean.
+     *
+     * @param op the op
+     * @param ED the ed
+     * @param FD the fd
+     * @return the boolean
+     * @throws IOException the io exception
+     */
+    public static boolean optionSelector(String op, BinaryTree<String, ArrayList<String>> ED, BinaryTree<String, ArrayList<String>> FD) throws IOException {
             Translator trans = new Translator();
             dividedWords dW = new dividedWords();
             switch(op){
@@ -71,7 +96,12 @@ public class DriverProgram {
             return true;
         }
 
-        public static void showNewPhrase(ArrayList<ArrayList<String>> lists){
+    /**
+     * Show new phrase.
+     *
+     * @param lists the lists
+     */
+    public static void showNewPhrase(ArrayList<ArrayList<String>> lists){
             ArrayList<String> phrases = new ArrayList<>();
             phrases.add(String.join(" ", lists.get(0)));
             phrases.add(String.join(" ", lists.get(1)));

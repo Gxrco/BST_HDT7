@@ -3,7 +3,17 @@ package Controller;
 import Model.BinaryTree;
 import java.util.ArrayList;
 
+/**
+ * The type Translator.
+ */
 public class Translator {
+    /**
+     * Get from english array list.
+     *
+     * @param ED     the ed
+     * @param phrase the phrase
+     * @return the array list
+     */
     public ArrayList<ArrayList<String>> getFromEnglish(BinaryTree<String, ArrayList<String>> ED, ArrayList<String> phrase){
         ArrayList<ArrayList<String>> translations = new ArrayList<>();
         ArrayList<String> fTranslation = new ArrayList<>();
@@ -27,6 +37,13 @@ public class Translator {
         return translations;
     }
 
+    /**
+     * Get from french array list.
+     *
+     * @param FD     the fd
+     * @param phrase the phrase
+     * @return the array list
+     */
     public ArrayList<ArrayList<String>> getFromFrench(BinaryTree<String, ArrayList<String>> FD, ArrayList<String> phrase){
         ArrayList<ArrayList<String>> translations = new ArrayList<ArrayList<String>>();
         ArrayList<String> fTranslation = new ArrayList<>();
