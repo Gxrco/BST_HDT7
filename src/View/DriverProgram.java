@@ -16,7 +16,7 @@ public class DriverProgram {
         BinaryTree<String,ArrayList<String>> FrenchDict = new BinaryTree<>();
         Scanner sc = new Scanner(System.in);
 
-        setUpByFile("dict.txt", EnglishDict, FrenchDict);
+        setUpByFile("diccionario.txt", EnglishDict, FrenchDict);
         System.out.println("Bienvenido al sistema de traduccion");
         System.out.println("-".repeat(50));
         boolean check = true;
@@ -55,11 +55,11 @@ public class DriverProgram {
             dividedWords dW = new dividedWords();
             switch(op){
                 case "1":
-                    ArrayList<ArrayList<String>> translations = trans.getFromEnglish(ED, dW.getPhrase(""));
+                    ArrayList<ArrayList<String>> translations = trans.getFromEnglish(ED, dW.getPhrase("frase.txt"));
                     showNewPhrase(translations);
                     break;
                 case "2":
-                    ArrayList<ArrayList<String>> tr = trans.getFromFrench(FD, dW.getPhrase(""));
+                    ArrayList<ArrayList<String>> tr = trans.getFromFrench(FD, dW.getPhrase("frase.txt"));
                     showNewPhrase(tr);
                     break;
                 case "3":
