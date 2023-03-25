@@ -191,3 +191,8 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
     }
 }
+
+/**
+ * Referencias tomadas de:
+ * https://www.geeksforgeeks.org/binary-tree-data-structure/
+ */
