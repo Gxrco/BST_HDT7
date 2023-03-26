@@ -7,7 +7,6 @@ import Model.BinaryTree;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -21,8 +20,8 @@ public class DriverProgram {
      * @throws IOException the io exception
      */
     public static void main(String[] args) throws IOException {
-        BinaryTree<String,ArrayList<String>> EnglishDict = new BinaryTree<>();
-        BinaryTree<String,ArrayList<String>> FrenchDict = new BinaryTree<>();
+        BinaryTree<String,ArrayList<String>> EnglishDict = null;
+        BinaryTree<String,ArrayList<String>> FrenchDict = null;
         Scanner sc = new Scanner(System.in);
 
         setUpByFile("diccionario.txt", EnglishDict, FrenchDict);
@@ -49,20 +48,32 @@ public class DriverProgram {
     public static void setUpByFile(String path, BinaryTree<String, ArrayList<String>> ED, BinaryTree<String, ArrayList<String>> FD){
             dividedWords FR = new dividedWords();
             ArrayList<String[]> values =FR.readingFile(path);
+            boolean check = true;
         for (String[] val:values) {
             ArrayList<String> newArray = new ArrayList<>();
             Association<String, ArrayList<String>> newAssoc;
             newArray.add(val[1]); newArray.add(val[2]);
             newAssoc = new Association<>(val[0], newArray);
-            ED.insert(newAssoc);
+            if(check) {
+                ED = new BinaryTree<>(newAssoc);
+                check = false;
+            }else{
+                FD.insert(newAssoc);
+            }
         }
 
+        check = true;
         for (String[] val: values){
             ArrayList<String> newArray2 = new ArrayList<>();
             Association<String, ArrayList<String>> newAssoc;
             newArray2.add(val[0]); newArray2.add(val[1]);
             newAssoc = new Association<>(val[2], newArray2);
-            FD.insert(newAssoc);
+            if(check) {
+                FD = new BinaryTree<>(newAssoc);
+                check = false;
+            }else{
+                FD.insert(newAssoc);
+            }
         }
         }
 
